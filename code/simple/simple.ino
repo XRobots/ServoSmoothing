@@ -1,6 +1,5 @@
 int switch1;
-float switch1Smoothed;
-float switch1Prev;
+float switch1Smoothed = 0;
 
 void setup() {
 
@@ -17,9 +16,7 @@ void loop() {
 
   // *** smoothing ***
 
-  switch1Smoothed = (switch1 * 0.05) + (switch1Prev * 0.95);
-
-  switch1Prev = switch1Smoothed;
+  switch1Smoothed = (switch1 * 0.05) + (switch1Smoothed * 0.95);
 
   // *** end of smoothing ***
 
